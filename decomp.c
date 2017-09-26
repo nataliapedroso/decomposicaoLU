@@ -20,7 +20,7 @@ void leitura(double **M, int dim, FILE*ler)
 		M[i]=malloc((dim+1)*sizeof(double));
 
 	i=j=0;
-	while(fscanf(ler, "%.1f", &a)!=EOF)
+	while(fscanf(ler, "%lf", &a)!=EOF)
 	{
 		M[i][j]=a;
 		j++;
