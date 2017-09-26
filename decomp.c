@@ -96,5 +96,22 @@ void decompLU(double **M, int dim)
 
 	printf("\n Número de operações: %d \n", oper);
 }
+int main(int argc, char *argv[])
+{
+	int i, j, dim;
+	double **M, a;
+	FILE *ler;
 
+	ler=fopen(argv[1], "r");
 
+	i=fscanf(ler, "%d", &dim);
+
+	M=malloc(dim*sizeof(double*));
+
+	leitura(M, dim, ler);
+
+	printf("\n Matriz informada: \n");
+	imprimir(M, dim);
+
+	decompLU(M, dim);
+}
